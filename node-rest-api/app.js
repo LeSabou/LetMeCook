@@ -1,6 +1,8 @@
-// Déclaration de express //
+// Déclaration de express + Const //
 const express = require('express');
 const app = express();
+const { user } = require('./controllers/UserController')
+
 app.use(express.json());
 
 // Déclaration du port + Affichage en console du port //
@@ -16,3 +18,6 @@ app.get('/status', (req, res) => {
     };
     res.json(status);
 });
+
+// TEST DE RENVOI DES USERS //
+app.get('/User', user)
